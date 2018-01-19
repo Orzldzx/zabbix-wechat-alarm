@@ -146,6 +146,7 @@ class PingStr():
                 问题时间: {problem_date} {problem_time}<br>
                 问题区域: {problem_hostgroup}<br>
                 问题主机: {problem_host_name}<br>
+                问题数值: {problem_value}<br>
                 主机地址: {problem_host_ip}<br>
                 问题描述: {problem_desc}
             </div>
@@ -161,6 +162,7 @@ class PingStr():
                 problem_hostgroup = opts['trigger_hostgroup_name'],
                 problem_host_name = opts['host_name'],
                 problem_host_ip = opts['host_ip'],
+                problem_value = opts['event_value'],
                 problem_desc = opts['trigger_description'],
             )
         elif opts['trigger_statue'] == 'OK':
@@ -175,7 +177,8 @@ class PingStr():
                 问题主机: {problem_host_name}<br>
                 主机地址: {problem_host_ip}<br>
                 问题描述: {problem_desc}<br>
-                恢复时间: {recovery_date} {recovery_time}
+                恢复时间: {recovery_date} {recovery_time}<br>
+                恢复数值: {recovery_value}<br>
                 持续时长: {recovery_age}
             </div>
             <br><br>
@@ -193,6 +196,7 @@ class PingStr():
                 problem_desc = opts['trigger_description'],
                 recovery_date = opts['event_recovery_date'],
                 recovery_time = opts['event_recovery_time'],
+                recovery_value = opts['event_recovery_value'],
                 recovery_age = opts['event_age']
             )
         else:
