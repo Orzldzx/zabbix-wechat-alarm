@@ -2,7 +2,7 @@
 # @Author: seven
 # @Date:   2017-12-16T15:35:08+08:00
 # @Last modified by:   seven
-# @Last modified time: 2017-12-16T16:25:30+08:00
+# @Last modified time: 2018-01-22 10:59:34
 
 
 import os
@@ -140,64 +140,64 @@ class PingStr():
             content = '''
             <img src={graph_url} width="550" />
             <br><br>
-            <div class="gray">
-                当前状态: {problem_state}<br>
-                告警级别: {problem_level}<br>
-                问题时间: {problem_date} {problem_time}<br>
-                问题区域: {problem_hostgroup}<br>
-                问题主机: {problem_host_name}<br>
-                问题数值: {problem_value}<br>
-                主机地址: {problem_host_ip}<br>
-                问题描述: {problem_desc}
-            </div>
-            <br><br>
-            <img src={split_line_url} width="550" />
-            '''.format(
-                graph_url = image,
-                split_line_url = conf.get('wx', 'split'),
-                problem_state = opts['trigger_statue'],
-                problem_level = opts['trigger_severity'],
-                problem_date = opts['event_date'],
-                problem_time = opts['event_time'],
-                problem_hostgroup = opts['trigger_hostgroup_name'],
-                problem_host_name = opts['host_name'],
-                problem_host_ip = opts['host_ip'],
-                problem_value = opts['event_value'],
-                problem_desc = opts['trigger_description'],
+            <div class="gray">                                                                                        
+                当前状态: {problem_state}<br>                                                                         
+                告警级别: {problem_level}<br>                                                                         
+                问题时间: {problem_date} {problem_time}<br>                                                           
+                问题区域: {problem_hostgroup}<br>                                                                     
+                问题主机: {problem_host_name}<br>                                                                     
+                主机地址: {problem_host_ip}<br>                                                                       
+                问题详情: {problem_value}<br>                                                                         
+                问题描述: {problem_desc}                                                                              
+            </div>                                                                                                    
+            <br><br>                                                                                                  
+            <img src={split_line_url} width="550" />                                                                  
+            '''.format(                                                                                               
+                graph_url=image,                                                                                      
+                split_line_url=conf.get('wx', 'split'),                                                               
+                problem_state=opts['trigger_statue'],                                                                 
+                problem_level=opts['trigger_severity'],                                                               
+                problem_date=opts['event_date'],                                                                      
+                problem_time=opts['event_time'],                                                                      
+                problem_hostgroup=opts['trigger_hostgroup_name'],                                                     
+                problem_host_name=opts['host_name'],                                                                  
+                problem_host_ip=opts['host_ip'],                                                                      
+                problem_value='%s: %s' % (opts['item_name'], opts['item_value']),                                     
+                problem_desc=opts['trigger_description'],                                                             
             )
         elif opts['trigger_statue'] == 'OK':
             content = '''
             <img src={graph_url} width="550" />
             <br><br>
-            <div class="gray">
-                当前状态: {problem_state}<br>
-                告警级别: {problem_level}<br>
-                问题时间: {problem_date} {problem_time}<br>
-                问题区域: {problem_hostgroup}<br>
-                问题主机: {problem_host_name}<br>
-                主机地址: {problem_host_ip}<br>
-                问题描述: {problem_desc}<br>
-                恢复时间: {recovery_date} {recovery_time}<br>
-                恢复数值: {recovery_value}<br>
-                持续时长: {recovery_age}
-            </div>
-            <br><br>
-            <img src={split_line_url} width="550" />
-            '''.format(
-                graph_url = image,
-                split_line_url = conf.get('wx', 'split'),
-                problem_state = opts['trigger_statue'],
-                problem_level = opts['trigger_severity'],
-                problem_date = opts['event_date'],
-                problem_time = opts['event_time'],
-                problem_hostgroup = opts['trigger_hostgroup_name'],
-                problem_host_name = opts['host_name'],
-                problem_host_ip = opts['host_ip'],
-                problem_desc = opts['trigger_description'],
-                recovery_date = opts['event_recovery_date'],
-                recovery_time = opts['event_recovery_time'],
-                recovery_value = opts['event_recovery_value'],
-                recovery_age = opts['event_age']
+            <div class="gray">                                                                                        
+                当前状态: {problem_state}<br>                                                                         
+                告警级别: {problem_level}<br>                                                                         
+                问题时间: {problem_date} {problem_time}<br>                                                           
+                问题区域: {problem_hostgroup}<br>                                                                     
+                问题主机: {problem_host_name}<br>                                                                     
+                主机地址: {problem_host_ip}<br>                                                                       
+                问题详情: {problem_value}<br>                                                                         
+                问题描述: {problem_desc}<br>                                                                          
+                恢复时间: {recovery_date} {recovery_time}<br>                                                         
+                持续时长: {recovery_age}                                                                              
+            </div>                                                                                                    
+            <br><br>                                                                                                  
+            <img src={split_line_url} width="550" />                                                                  
+            '''.format(                                                                                               
+                graph_url=image,                                                                                      
+                split_line_url=conf.get('wx', 'split'),                                                               
+                problem_state=opts['trigger_statue'],                                                                 
+                problem_level=opts['trigger_severity'],                                                               
+                problem_date=opts['event_date'],                                                                      
+                problem_time=opts['event_time'],                                                                      
+                problem_hostgroup=opts['trigger_hostgroup_name'],                                                     
+                problem_host_name=opts['host_name'],                                                                  
+                problem_host_ip=opts['host_ip'],                                                                      
+                problem_value='%s: %s' % (opts['item_name'], opts['item_value']),                                     
+                problem_desc=opts['trigger_description'],                                                             
+                recovery_date=opts['event_recovery_date'],                                                            
+                recovery_time=opts['event_recovery_time'],                                                            
+                recovery_age=opts['event_age']                                                                        
             )
         else:
             print('不对')
