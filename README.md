@@ -1,18 +1,35 @@
-# zabbix-wechat-alarm
-发送zabbix图文告警到微信
+# zabbix-wechat-alarm  
+发送zabbix图文告警到微信  
 
-## 依赖
-- python3
+---
+
+# 效果  
+### 告警  
+
+![image1](images/zbx-alarm-1.png)  
+![image2](images/zbx-alarm-2.png)  
+
+### 恢复  
+
+![image3](images/zbx-alarm-3.png)  
+![image4](images/zbx-alarm-4.png)  
+
+---
+
+## 依赖  
+- python3  
 
 ```bash
 pip3 install pyzabbix wechatpy pycrypto
 ```
+
 
 ## 修改配置文件
 
 ```bash
 vim setting.conf
 ```
+
 
 ## 添加 nginx 配置
 
@@ -21,6 +38,7 @@ cp zabbix-wechat.conf path/nginx/conf/
 nginx -t
 nginx -s reload
 ```
+
 
 ## zabbix添加 Media types
 
@@ -32,6 +50,7 @@ Administration => Media types => Create media type
 - Script parameters
   - {ALERT.SENDTO}
   - {ALERT.MESSAGE}
+
 
 ## zabbix 添加 user - Media
 
@@ -91,3 +110,4 @@ Configuration => Actions => Event source = Triggers => Create action
     "event_recovery_time": "{EVENT.RECOVERY.TIME}"
   }
   ```
+  
