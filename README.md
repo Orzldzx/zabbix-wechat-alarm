@@ -47,11 +47,47 @@ Configuration => Actions => Event source = Triggers => Create action
 - Operations
   - Default message
   ```
-  {"trigger_statue":"{TRIGGER.STATUS}","trigger_severity":"{TRIGGER.SEVERITY}","event_id":"{EVENT.ID}","trigger_hostgroup_name":"{TRIGGER.HOSTGROUP.NAME}","host_name":"{HOST.NAME}","host_ip":"{HOST.IP}","event_value":"{EVENT.VALUE}","event_date":"{EVENT.DATE}","event_time":"{EVENT.TIME}","trigger_description":"{TRIGGER.DESCRIPTION}","item_id":"{ITEM.ID}","trigger_name":"{TRIGGER.NAME}","trigger_id":"{TRIGGER.ID}","event_age":"","event_recovery_date":"","event_recovery_time":"","event_recovery_value":""}
+  {
+    "trigger_statue": "{TRIGGER.STATUS}",
+    "trigger_severity": "{TRIGGER.SEVERITY}",
+    "event_id": "{EVENT.ID}",
+    "trigger_hostgroup_name": "{TRIGGER.HOSTGROUP.NAME}",
+    "host_name": "{HOST.NAME}",
+    "host_ip": "{HOST.IP}",
+    "item_name": "{ITEM.NAME}",
+    "item_value": "{ITEM.VALUE}",
+    "event_date": "{EVENT.DATE}",
+    "event_time": "{EVENT.TIME}",
+    "trigger_description": "{TRIGGER.DESCRIPTION}",
+    "item_id": "{ITEM.ID}",
+    "trigger_name": "{TRIGGER.NAME}",
+    "trigger_id": "{TRIGGER.ID}",
+    "event_age": "",
+    "event_recovery_date": "",
+    "event_recovery_time": ""
+  }
   ```
   
 - Recovery operations
   - Default message
   ```
-  {"trigger_statue":"{TRIGGER.STATUS}","trigger_severity":"{TRIGGER.SEVERITY}","event_id":"{EVENT.ID}","trigger_hostgroup_name":"{TRIGGER.HOSTGROUP.NAME}","host_name":"{HOST.NAME}","host_ip":"{HOST.IP}","event_value":"","event_date":"{EVENT.DATE}","event_time":"{EVENT.TIME}","trigger_description":"{TRIGGER.DESCRIPTION}","item_id":"{ITEM.ID}","trigger_name":"{TRIGGER.NAME}","trigger_id":"{TRIGGER.ID}","event_age":"{EVENT.AGE}","event_recovery_date":"{EVENT.RECOVERY.DATE}","event_recovery_time":"{EVENT.RECOVERY.TIME}","event_recovery_value":"{EVENT.RECOVERY.VALUE}"}
+  {
+    "trigger_statue": "{TRIGGER.STATUS}",
+    "trigger_severity": "{TRIGGER.SEVERITY}",
+    "event_id": "{EVENT.ID}",
+    "trigger_hostgroup_name": "{TRIGGER.HOSTGROUP.NAME}",
+    "host_name": "{HOST.NAME}",
+    "host_ip": "{HOST.IP}",
+    "item_name": "{ITEM.NAME}",
+    "item_value": "{ITEM.VALUE}",
+    "event_date": "{EVENT.DATE}",
+    "event_time": "{EVENT.TIME}",
+    "trigger_description": "{TRIGGER.DESCRIPTION}",
+    "item_id": "{ITEM.ID}",
+    "trigger_name": "{TRIGGER.NAME}",
+    "trigger_id": "{TRIGGER.ID}",
+    "event_age": "{EVENT.AGE}",
+    "event_recovery_date": "{EVENT.RECOVERY.DATE}",
+    "event_recovery_time": "{EVENT.RECOVERY.TIME}"
+  }
   ```
