@@ -26,7 +26,7 @@ def get_graph(zbx_url, zbx_user, zbx_pass, itemid, eventid, zbx_image_path, zbx_
 
         login_url = zbx_url + '/index.php'
         login_data = {
-            'autologin': 1, 'enter': '注册', 'name': zbx_user, 'password': zbx_pass
+            'autologin': 1, 'enter': 'Sign in', 'name': zbx_user, 'password': zbx_pass
         }
         graph_url = zbx_url + '/chart2.php'
         graph_payload = {
